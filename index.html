@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш кофе</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="js/script.js"></script>
+</head>
+    <body>
+        
+      <a-scene embedded arjs>
+        <a-assets>
+        <!--Главное меню-->
+        <img id="image1" src='btn/main/Groupbtn.svg'>
+        <img id="image2" src="btn/main/Groupms-btn.svg">
+        <img id="image3" src="btn/main/Grouplim-btn.svg">
+        <img id="image4" src="btn/main/Grouptea-btn.svg">
+        <!--Молочные коктейли-->
+        <img id="image5" src="btn/main/Groupbtn.svg">
+        </a-assets>
+        
+        <a-marker type = 'pattern' url="pattern-marker.patt">
+        <a-entity id="main" class="selector" visible="true" button-handler> <!--Главная группа-->
+            <a-plane position="0 0 -1" scale="0.5 0.5 0" material="src:#image1; side: double;" value="milkshake"></a-plane>
+            <a-plane position="0 0.5 -1" scale="0.5 0.5 0" material="src:#image2; side: double;"></a-plane>
+            <a-plane position="0.5 0 -1" scale="0.5 0.5 0" material="src:#image3; side: double;"></a-plane>
+            <a-plane position="0.5 0.5 -1" scale="0.5 0.5 0" material="src:#image4; side: double;"></a-plane>
+            <a-plane position="0.5 0.5 -1" scale="0.5 0.5 0" material="src:#image4; side: double;"></a-plane>
+              </a-entity>
+              
+        </a-entity>
+        
+        </a-entity>
+        <a-entity id="milkshake" class="selector" visible="false" button-handler> <!--Молочные коктейли-->
+        <a-plane  position="0 0 -1" scale="0.5 0.5 0" material="src:#image5; side: double;"></a-plane>
+        </a-entity>
+        </a-marker>
+    
+
+    
+        <a-entity camera></a-entity>
+      </a-scene>
+    </body>
+    </html>
+</body>
+</html>
